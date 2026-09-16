@@ -1,11 +1,11 @@
 {
     "platforms":  {
                       "windows-x86_64":  {
-                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWlAwaWxaVDQ5eDB3b1dQTHJIcVhIOGt0MjdrRDZ2a2xiN2pTd0Uwc0ZqVlY2VW40MkkySktvSWV6dXlCRUtGWFFiVUVSdHRuajdVQzhFVFJZTkhHTkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTc1NTY2CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMS4xX3g2NC1zZXR1cC5leGUKTUptMG1kUWl2ZkF0ZjNadlV2TkJYdmd3d3hpVGQzN2k2dWNtMEJaUGZwZ2VLSFFqR0ZCd1JhSUFTelV4WVlhU1F1NEh3MkNPU29nQmhrZkxWb0cwQWc9PQo=",
-                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.1/MRRDEV-Download_0.1.1_x64-setup.exe"
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWkUwL2pucFVnT0RteVYxUVppTjV1b2hBNnN5b2VNQUxmSmovdFZEYWJ2V3JyNHRPNmYzNWpKS3k0UnEyM3gwRW1IL2YxVHg5OENGYnhVYjlxdklWL0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTkyMzQ5CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMS4yX3g2NC1zZXR1cC5leGUKNlJHQ3ZyalBSZzBkcXRIQlk1WlJHaEhuVzN4bTdzdUx3OCtqSVkxa21tSXJINE8wL2FUZUFkMEROczk3VXdyZ09tdlNTR2hqTVdXbW5NS0gzVllBREE9PQo=",
+                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.2/MRRDEV-Download_0.1.2_x64-setup.exe"
                                          }
                   },
-    "pub_date":  "2026-09-16T16:19:38Z",
-    "version":  "0.1.1",
-    "notes":  "Instalacao automatica dos componentes de video (yt-dlp e FFmpeg) com barra de progresso no topo da janela; botao de video em players dentro de Shadow DOM (Reddit e outros); botao nao some com o mouse parado; aviso de atualizacao da extensao com clique corrigido; mensagens mais claras quando o programa esta fechado."
+    "pub_date":  "2026-09-16T20:59:13Z",
+    "version":  "0.1.2",
+    "notes":  "Baixar video do X/Twitter em MP4 (usa o link do tweet, oferece as qualidades). Fragmentos soltos (.m4s) nao aparecem mais como download."
 }
