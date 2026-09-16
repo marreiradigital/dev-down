@@ -342,6 +342,9 @@
           <span id="publicado"></span>
           <span>Gratuito, sem anúncio e sem cadastro</span>
         </p>
+        <p class="meta">
+          <a id="baixar-portatil" href="#antivirus" style="color: var(--text-dim)">O antivírus bloqueou? Baixe a versão portátil (sem instalador)</a>
+        </p>
         </div>
         </div>
       </div>
@@ -438,6 +441,42 @@
       </div>
     </section>
 
+    <section id="antivirus">
+      <div class="wrap">
+        <h2>Se o antivírus reclamar</h2>
+        <p class="intro">
+          Alguns antivírus (como o Kaspersky) e o próprio Windows podem marcar o instalador por engano — um
+          <strong>falso positivo</strong>. Não é vírus. Acontece porque o programa ainda não tem um certificado de assinatura
+          (é caro), e o antivírus desconfia de um programa novo, sem assinatura, que baixa componentes da internet. O código é
+          aberto e cada atualização é verificada por assinatura criptográfica própria.
+        </p>
+        <div class="grade">
+          <article class="cartao">
+            <h3>Opção 1 — Versão portátil</h3>
+            <p>
+              A maneira mais fácil: baixe a <a id="link-portatil" href="https://github.com/marreiradigital/dev-down/releases/latest">versão portátil (.zip)</a>,
+              que não tem instalador. Descompacte numa pasta fixa e rode o <code>mrrdev-download.exe</code>.
+            </p>
+          </article>
+          <article class="cartao">
+            <h3>Opção 2 — Liberar no antivírus</h3>
+            <p>
+              Se ele apagou o arquivo: abra a <strong>Quarentena</strong> do antivírus, <strong>Restaurar</strong> o
+              MRRDEV-Download e marque como confiável (adicionar à exceção). No Windows Defender: Segurança do Windows →
+              Proteção contra vírus → Histórico de proteção → Restaurar.
+            </p>
+          </article>
+          <article class="cartao">
+            <h3>Opção 3 — "Windows protegeu o computador"</h3>
+            <p>
+              Esse aviso azul não é o antivírus: clique em <strong>Mais informações</strong> e depois em
+              <strong>Executar assim mesmo</strong>.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <h2>Compatibilidade</h2>
@@ -506,6 +545,7 @@
           const release = await r.json();
           const instalador = release.assets.find((a) => a.name.endsWith(".exe"));
           const extensao = release.assets.find((a) => a.name.includes("extensao") && a.name.endsWith(".zip"));
+          const portatil = release.assets.find((a) => a.name.includes("portatil") && a.name.endsWith(".zip"));
 
           if (instalador) {
             const botao = document.getElementById("baixar-programa");
@@ -513,6 +553,7 @@
             document.getElementById("info-programa").textContent = `Windows 10/11 · 64 bits · ${formatarTamanho(instalador.size)}`;
           }
           if (extensao) document.getElementById("baixar-extensao").href = extensao.browser_download_url;
+          if (portatil) document.getElementById("link-portatil").href = portatil.browser_download_url;
 
           versaoEl.textContent = `Versão ${release.tag_name.replace(/^v/, "")}`;
           document.getElementById("publicado").textContent = `Publicada em ${formatarData(release.published_at)}`;
