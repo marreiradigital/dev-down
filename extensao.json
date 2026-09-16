@@ -1,6 +1,6 @@
 {
-    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.0/mrrdev-download-extensao-0.1.0.zip",
+    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.1/mrrdev-download-extensao-0.1.1.zip",
     "url":  "https://dev-down.marreira.dev/",
-    "notas":  "Primeira versao publica: captura de downloads do navegador, 8 conexoes por arquivo, pausar e continuar, botao de video com yt-dlp, monitor da area de transferencia e atualizacao automatica.",
-    "versao":  "0.1.0"
+    "notas":  "Instalacao automatica dos componentes de video (yt-dlp e FFmpeg) com barra de progresso no topo da janela; botao de video em players dentro de Shadow DOM (Reddit e outros); botao nao some com o mouse parado; aviso de atualizacao da extensao com clique corrigido; mensagens mais claras quando o programa esta fechado.",
+    "versao":  "0.1.1"
 }
