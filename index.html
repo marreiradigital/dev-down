@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>MRRDEV-Download — gerenciador de downloads para Windows</title>
+    <meta
+      name="description"
+      content="Gerenciador de downloads para Windows: captura os downloads do navegador, baixa em várias conexões, continua de onde parou e baixa vídeo de página com um botão."
+    />
+    <meta property="og:title" content="MRRDEV-Download" />
+    <meta property="og:description" content="Captura os downloads do navegador, baixa em 8 conexões e baixa vídeo de página com um botão." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dev-down.marreira.dev/" />
+    <link rel="icon" href="icone.png" />
+    <style>
+      :root {
+        --bg: #16181b;
+        --bg-elev: #1f2227;
+        --bg-soft: #262a30;
+        --border: #34383f;
+        --text: #e9ebee;
+        --text-dim: #a5abb4;
+        --text-faint: #767d87;
+        --accent: #3b82f6;
+        --accent-hover: #2f6fd8;
+        --ok: #22c55e;
+        --warn: #f59e0b;
+        --radius: 12px;
+        color-scheme: dark;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-wrap: anywhere;
+      }
+      img,
+      svg {
+        max-width: 100%;
+      }
+      .wrap {
+        width: min(1080px, 100% - 32px);
+        margin-inline: auto;
+      }
+      header.topo {
+        border-bottom: 1px solid var(--border);
+        background: linear-gradient(180deg, #1b2130, var(--bg) 70%);
+        padding: clamp(40px, 9vw, 88px) 0 clamp(32px, 7vw, 64px);
+      }
+      .marca {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+      .marca img {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+      }
+      .marca strong {
+        font-size: 19px;
+        font-weight: 650;
+      }
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(30px, 6vw, 46px);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        max-width: 18ch;
+      }
+      .sub {
+        margin: 0 0 32px;
+        color: var(--text-dim);
+        font-size: clamp(16px, 2.4vw, 19px);
+        max-width: 62ch;
+      }
+      .acoes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 52px;
+        padding: 0 24px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--bg-elev);
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.15s ease, border-color 0.15s ease;
+      }
+      .btn:hover {
+        background: var(--bg-soft);
+      }
+      .btn.principal {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .btn.principal:hover {
+        background: var(--accent-hover);
+      }
+      .btn:focus-visible {
+        outline: 2px solid #93c5fd;
+        outline-offset: 2px;
+      }
+      .btn small {
+        display: block;
+        font-weight: 400;
+        font-size: 12px;
+        opacity: 0.85;
+      }
+      .meta {
+        margin-top: 20px;
+        color: var(--text-faint);
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+      section {
+        padding: clamp(40px, 8vw, 72px) 0;
+        border-bottom: 1px solid var(--border);
+      }
+      h2 {
+        margin: 0 0 8px;
+        font-size: clamp(22px, 4vw, 28px);
+        letter-spacing: -0.01em;
+      }
+      .intro {
+        margin: 0 0 32px;
+        color: var(--text-dim);
+        max-width: 64ch;
+      }
+      .grade {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .cartao {
+        background: var(--bg-elev);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+      }
+      .cartao h3 {
+        margin: 0 0 8px;
+        font-size: 17px;
+      }
+      .cartao p {
+        margin: 0;
+        color: var(--text-dim);
+        font-size: 15px;
+      }
+      ol.passos {
+        counter-reset: passo;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 16px;
+      }
+      ol.passos li {
+        counter-increment: passo;
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 16px;
+        align-items: start;
+        background: var(--bg-elev);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+      }
+      ol.passos li::before {
+        content: counter(passo);
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      ol.passos p {
+        margin: 6px 0 0;
+        color: var(--text-dim);
+        font-size: 15px;
+      }
+      code {
+        font-family: "Cascadia Mono", Consolas, monospace;
+        font-size: 0.92em;
+        background: var(--bg-soft);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 2px 7px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      th {
+        color: var(--text-dim);
+        font-weight: 600;
+        width: 42%;
+      }
+      .aviso {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        background: #2a2416;
+        border: 1px solid #5a4a1a;
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        color: #f4e2b8;
+        font-size: 15px;
+        margin-top: 24px;
+      }
+      footer {
+        padding: 40px 0 56px;
+        color: var(--text-faint);
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        justify-content: space-between;
+      }
+      footer a {
+        color: var(--text-dim);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="wrap">
+        <div class="marca">
+          <img src="icone.png" alt="" width="52" height="52" />
+          <strong>MRRDEV-Download</strong>
+        </div>
+        <h1>O gerenciador de downloads que faltava no Windows</h1>
+        <p class="sub">
+          Clique num download no navegador e ele assume: baixa em <strong>8 conexões ao mesmo tempo</strong>, continua de onde
+          parou mesmo depois de fechar o programa, organiza por categoria e baixa vídeo de página com um botão sobre o player.
+        </p>
+        <div class="acoes">
+          <a class="btn principal" id="baixar-programa" href="https://github.com/marreiradigital/dev-down/releases/latest">
+            <span>
+              Baixar o programa
+              <small id="info-programa">Windows 10/11 · 64 bits</small>
+            </span>
+          </a>
+          <a class="btn" id="baixar-extensao" href="https://github.com/marreiradigital/dev-down/releases/latest">
+            <span>
+              Baixar a extensão
+              <small>Brave · Chrome · Edge</small>
+            </span>
+          </a>
+        </div>
+        <p class="meta">
+          <span id="versao">Carregando a versão…</span>
+          <span id="publicado"></span>
+          <span>Gratuito, sem anúncio e sem cadastro</span>
+        </p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <h2>O que ele faz</h2>
+        <p class="intro">Nada de assinatura, nada de tela de compra. É um programa só, que faz o trabalho e some da frente.</p>
+        <div class="grade">
+          <article class="cartao">
+            <h3>Captura do navegador</h3>
+            <p>Clicou num arquivo, a janela dele aparece no lugar do download comum. Segure <code>Alt</code> para deixar passar.</p>
+          </article>
+          <article class="cartao">
+            <h3>Oito conexões por arquivo</h3>
+            <p>O arquivo é dividido em partes baixadas ao mesmo tempo, o que costuma multiplicar a velocidade em servidor lento.</p>
+          </article>
+          <article class="cartao">
+            <h3>Pausar e continuar</h3>
+            <p>Pode fechar o programa, desligar o PC e continuar depois — o progresso de cada parte fica salvo.</p>
+          </article>
+          <article class="cartao">
+            <h3>Botão sobre o vídeo</h3>
+            <p>Em cima do player do YouTube, Instagram, TikTok, Reddit e afins: escolha a qualidade ou só o áudio em MP3.</p>
+          </article>
+          <article class="cartao">
+            <h3>Copiou, ele oferece</h3>
+            <p>Copiou o link de um arquivo ou de um vídeo? Ele pergunta se você quer baixar. Sem precisar colar.</p>
+          </article>
+          <article class="cartao">
+            <h3>Fila e organização</h3>
+            <p>Limite de downloads ao mesmo tempo, limite de velocidade e uma pasta por categoria: vídeos, programas, documentos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Como instalar</h2>
+        <p class="intro">Leva dois minutos. A extensão é o que faz o navegador conversar com o programa.</p>
+        <ol class="passos">
+          <li>
+            <div>
+              <strong>Instale o programa</strong>
+              <p>Baixe e execute o instalador. Ele não pede permissão de administrador e já abre junto com o Windows, minimizado.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Baixe a extensão e descompacte</strong>
+              <p>Guarde a pasta num lugar definitivo (ela precisa continuar existindo), por exemplo em Documentos.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Abra a página de extensões do navegador</strong>
+              <p><code>brave://extensions</code>, <code>chrome://extensions</code> ou <code>edge://extensions</code> e ligue o <strong>Modo do desenvolvedor</strong>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Clique em "Carregar sem compactação"</strong>
+              <p>Escolha a pasta que você descompactou. Depois, recarregue as abas que já estavam abertas.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="aviso">
+          <span aria-hidden="true">⚠️</span>
+          <p style="margin: 0">
+            O Windows pode mostrar o aviso "Windows protegeu o computador", porque o instalador ainda não tem certificado de
+            assinatura (que é pago). Clique em <strong>Mais informações → Executar assim mesmo</strong>. O programa se atualiza
+            sozinho e cada atualização é verificada por assinatura criptográfica própria.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Compatibilidade</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Sistema</th>
+              <td>Windows 10 e Windows 11, 64 bits. Não há versão para macOS ou Linux.</td>
+            </tr>
+            <tr>
+              <th>Navegadores</th>
+              <td>Brave, Google Chrome, Microsoft Edge, Opera e Vivaldi (qualquer navegador baseado em Chromium). Firefox ainda não.</td>
+            </tr>
+            <tr>
+              <th>Pré-requisito</th>
+              <td>WebView2, que já vem no Windows 11 e na maioria dos Windows 10 atualizados. Se faltar, o instalador avisa.</td>
+            </tr>
+            <tr>
+              <th>Para baixar vídeo</th>
+              <td>
+                yt-dlp e FFmpeg. O programa instala o yt-dlp sozinho em <strong>Opções → Vídeo</strong>; para o FFmpeg, rode
+                <code>winget install yt-dlp.FFmpeg</code>.
+              </td>
+            </tr>
+            <tr>
+              <th>Não funciona com</th>
+              <td>Conteúdo protegido por DRM (Netflix, Prime Video, Disney+) e sites que bloqueiam download por token de sessão.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Atualizações</h2>
+        <div class="grade">
+          <article class="cartao">
+            <h3>O programa se atualiza</h3>
+            <p>Ele procura versão nova uma vez por dia e avisa. Você clica em "Atualizar agora" e pronto. Também dá para procurar na hora, em <strong>Ajuda → Verificar atualizações</strong>.</p>
+          </article>
+          <article class="cartao">
+            <h3>A extensão avisa</h3>
+            <p>Como ela não vem de loja, o navegador não a atualiza sozinho: ela marca o ícone quando sai versão nova e traz o link para baixar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <span>MRRDEV-Download · feito por <a href="https://marreira.dev">Marreira Digital</a></span>
+      <span id="rodape-versao"></span>
+    </footer>
+
+    <script>
+      // Os botões apontam sempre para a última versão publicada, sem precisar editar esta página.
+      const REPO = "marreiradigital/dev-down";
+      const formatarData = (iso) => new Date(iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
+      const formatarTamanho = (bytes) => (bytes / 1024 / 1024).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " MB";
+
+      async function carregarVersao() {
+        const versaoEl = document.getElementById("versao");
+        try {
+          const r = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: "application/vnd.github+json" } });
+          if (!r.ok) throw new Error("sem release");
+          const release = await r.json();
+          const instalador = release.assets.find((a) => a.name.endsWith(".exe"));
+          const extensao = release.assets.find((a) => a.name.includes("extensao") && a.name.endsWith(".zip"));
+
+          if (instalador) {
+            const botao = document.getElementById("baixar-programa");
+            botao.href = instalador.browser_download_url;
+            document.getElementById("info-programa").textContent = `Windows 10/11 · 64 bits · ${formatarTamanho(instalador.size)}`;
+          }
+          if (extensao) document.getElementById("baixar-extensao").href = extensao.browser_download_url;
+
+          versaoEl.textContent = `Versão ${release.tag_name.replace(/^v/, "")}`;
+          document.getElementById("publicado").textContent = `Publicada em ${formatarData(release.published_at)}`;
+          document.getElementById("rodape-versao").textContent = `Versão ${release.tag_name.replace(/^v/, "")}`;
+        } catch {
+          versaoEl.textContent = "Não consegui ler a versão agora — os botões levam à página de downloads.";
+        }
+      }
+      carregarVersao();
+    </script>
+  </body>
+</html>
