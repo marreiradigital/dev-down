@@ -12,6 +12,8 @@
     <meta property="og:description" content="Captura os downloads do navegador, baixa em 8 conexões e baixa vídeo de página com um botão." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dev-down.marreira.dev/" />
+    <meta property="og:image" content="https://dev-down.marreira.dev/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="icone.png" />
     <style>
       :root {
@@ -54,6 +56,24 @@
         border-bottom: 1px solid var(--border);
         background: linear-gradient(180deg, #1b2130, var(--bg) 70%);
         padding: clamp(40px, 9vw, 88px) 0 clamp(32px, 7vw, 64px);
+      }
+      .topo-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(24px, 5vw, 56px);
+        align-items: center;
+      }
+      .topo-arte {
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+      @media (max-width: 820px) {
+        .topo-grid { grid-template-columns: 1fr; }
+        .topo-arte { display: none; }
       }
       .marca {
         display: flex;
@@ -239,6 +259,26 @@
         font-size: 15px;
         margin-top: 24px;
       }
+      .telas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+      .telas figure {
+        margin: 0;
+      }
+      .telas img {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        display: block;
+      }
+      .telas figcaption {
+        margin-top: 12px;
+        color: var(--text-dim);
+        font-size: 14px;
+      }
       footer {
         padding: 40px 0 56px;
         color: var(--text-faint);
@@ -260,7 +300,8 @@
   </head>
   <body>
     <header class="topo">
-      <div class="wrap">
+      <div class="wrap topo-grid">
+        <div>
         <div class="marca">
           <img src="icone.png" alt="" width="52" height="52" />
           <strong>MRRDEV-Download</strong>
@@ -289,6 +330,8 @@
           <span id="publicado"></span>
           <span>Gratuito, sem anúncio e sem cadastro</span>
         </p>
+        </div>
+        <img class="topo-arte" src="hero.png" alt="Ilustração de download em várias conexões" loading="eager" />
       </div>
     </header>
 
@@ -321,6 +364,23 @@
             <h3>Fila e organização</h3>
             <p>Limite de downloads ao mesmo tempo, limite de velocidade e uma pasta por categoria: vídeos, programas, documentos.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Veja funcionando</h2>
+        <p class="intro">Não é maquete: são telas do programa rodando de verdade.</p>
+        <div class="telas">
+          <figure>
+            <img src="programa.png" alt="Janela principal do MRRDEV-Download com downloads concluídos, categorias na lateral e a extensão conectada" loading="lazy" />
+            <figcaption>A janela principal, com as categorias na lateral e o status da extensão e do vídeo embaixo.</figcaption>
+          </figure>
+          <figure>
+            <img src="progresso.png" alt="Janela de progresso mostrando o download dividido em várias conexões" loading="lazy" />
+            <figcaption>O download dividido em várias conexões ao mesmo tempo — dá para pausar e continuar.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

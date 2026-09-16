@@ -1,0 +1,11 @@
+{
+    "platforms":  {
+                      "windows-x86_64":  {
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWkRyS1JGYU1SeWFSZThoUjVTalE0M0paN0prTDdFODZmZVJPZlRXYVZaTFNGbk5Kdlh4NCtpS0ZoT2NnYno2TDhqeS9URWdPaVFDUzVhWlIrNUh3QXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTI3OTg1CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMS4wX3g2NC1zZXR1cC5leGUKdXZBbTgxays3VlhONFBma1Zuc2dPYXd5SlVTT05ldjduUlJwZ3pNbnEyWWM1YlBIRU9WQkdaUEJueURRR0dvQTBuL044Vmo3K3d1YnE1eVBmcGd6Q0E9PQo=",
+                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.0/MRRDEV-Download_0.1.0_x64-setup.exe"
+                                         }
+                  },
+    "pub_date":  "2026-09-16T03:06:28Z",
+    "version":  "0.1.0",
+    "notes":  "Primeira versao publica: captura de downloads do navegador, 8 conexoes por arquivo, pausar e continuar, botao de video com yt-dlp, monitor da area de transferencia e atualizacao automatica."
+}

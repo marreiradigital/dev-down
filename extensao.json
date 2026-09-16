@@ -1,0 +1,6 @@
+{
+    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.0/mrrdev-download-extensao-0.1.0.zip",
+    "url":  "https://dev-down.marreira.dev/",
+    "notas":  "Primeira versao publica: captura de downloads do navegador, 8 conexoes por arquivo, pausar e continuar, botao de video com yt-dlp, monitor da area de transferencia e atualizacao automatica.",
+    "versao":  "0.1.0"
+}
