@@ -1,0 +1,28 @@
+MRRDEV-Download — versão portátil (sem instalador)
+===================================================
+
+Por que esta versão existe
+--------------------------
+Alguns antivírus marcam o INSTALADOR por engano (falso positivo), porque o
+programa ainda não tem certificado de assinatura. Esta versão é o mesmo
+programa, sem instalador — é só rodar.
+
+Como usar
+---------
+1) Deixe esta pasta num lugar fixo (ex.: Documentos). Não apague.
+2) Dê dois cliques em "mrrdev-download.exe".
+   - Se o Windows mostrar "Windows protegeu o computador":
+     clique em "Mais informações" e depois "Executar assim mesmo".
+3) O programa abre e fica na bandeja (ao lado do relógio).
+
+Extensão do navegador (para o botão de vídeo e a captura)
+---------------------------------------------------------
+1) Abra brave://extensions  (ou chrome://extensions / edge://extensions)
+2) Ligue o "Modo do desenvolvedor"
+3) "Carregar sem compactação" e escolha a pasta "extension" que está aqui dentro
+4) Recarregue as abas abertas
+
+Na primeira vez, o programa baixa sozinho o yt-dlp e o FFmpeg (para baixar
+vídeo) — aparece uma barrinha de progresso no topo da janela.
+
+Site: https://dev-down.marreira.dev

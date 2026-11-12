@@ -1,11 +1,11 @@
 {
     "platforms":  {
                       "windows-x86_64":  {
-                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWkUwL2pucFVnT0RteVYxUVppTjV1b2hBNnN5b2VNQUxmSmovdFZEYWJ2V3JyNHRPNmYzNWpKS3k0UnEyM3gwRW1IL2YxVHg5OENGYnhVYjlxdklWL0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NTkyMzQ5CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMS4yX3g2NC1zZXR1cC5leGUKNlJHQ3ZyalBSZzBkcXRIQlk1WlJHaEhuVzN4bTdzdUx3OCtqSVkxa21tSXJINE8wL2FUZUFkMEROczk3VXdyZ09tdlNTR2hqTVdXbW5NS0gzVllBREE9PQo=",
-                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.2/MRRDEV-Download_0.1.2_x64-setup.exe"
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWk94cjFsb1cyUXFwNnQ0RXY2ZzYrL1FSK0JMOTc1Ym1Zem9WQm9YWVVMQXMzcGZRbVB3ZWY5UWxxRXVnM1JEY3lOZ3ZrTTg2dW8vUHJ2QlVxRjcvTWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkzMjI1CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMi4wX3g2NC1zZXR1cC5leGUKUXoyT0s1TVM1RkUvOWlVQ0NCTTZBSEFCSjNlWFo3ZmZzMFFKeFJlcDFYOFNVR1BnQUhlSHlQaWZrWDVUaUFJbEhHNkt2Y0FjZFZiWHliOCtkYjdZQUE9PQo=",
+                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.2.0/MRRDEV-Download_0.2.0_x64-setup.exe"
                                          }
                   },
-    "pub_date":  "2026-09-16T20:59:13Z",
-    "version":  "0.1.2",
-    "notes":  "Baixar video do X/Twitter em MP4 (usa o link do tweet, oferece as qualidades). Fragmentos soltos (.m4s) nao aparecem mais como download."
+    "pub_date":  "2026-11-12T14:20:48Z",
+    "version":  "0.2.0",
+    "notes":  "Downloads do navegador não se perdem mais: o app só assume o que consegue baixar, e o que exige a sua sessão fica com o navegador.\nVídeo: as qualidades já estão prontas quando o menu abre, e escolher uma começa a baixar. MP4 agora em H.264 + AAC, que abre em qualquer lugar.\nJanela nova: lista moderna, tema claro ou escuro seguindo o Windows, arrastar o arquivo baixado para outras pastas e programas, soltar um link para baixar.\nOpção de baixar direto, sem a janela de confirmação (Opções → Ao adicionar)."
 }

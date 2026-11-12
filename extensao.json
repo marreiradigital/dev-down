@@ -1,6 +1,6 @@
 {
-    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.1.2/mrrdev-download-extensao-0.1.2.zip",
+    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.2.0/mrrdev-download-extensao-0.2.0.zip",
     "url":  "https://dev-down.marreira.dev/",
-    "notas":  "Baixar video do X/Twitter em MP4 (usa o link do tweet, oferece as qualidades). Fragmentos soltos (.m4s) nao aparecem mais como download.",
-    "versao":  "0.1.2"
+    "notas":  "Downloads do navegador não se perdem mais: o app só assume o que consegue baixar, e o que exige a sua sessão fica com o navegador.\nVídeo: as qualidades já estão prontas quando o menu abre, e escolher uma começa a baixar. MP4 agora em H.264 + AAC, que abre em qualquer lugar.\nJanela nova: lista moderna, tema claro ou escuro seguindo o Windows, arrastar o arquivo baixado para outras pastas e programas, soltar um link para baixar.\nOpção de baixar direto, sem a janela de confirmação (Opções → Ao adicionar).",
+    "versao":  "0.2.0"
 }
