@@ -1,11 +1,11 @@
 {
     "platforms":  {
                       "windows-x86_64":  {
-                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWk94cjFsb1cyUXFwNnQ0RXY2ZzYrL1FSK0JMOTc1Ym1Zem9WQm9YWVVMQXMzcGZRbVB3ZWY5UWxxRXVnM1JEY3lOZ3ZrTTg2dW8vUHJ2QlVxRjcvTWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkzMjI1CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMi4wX3g2NC1zZXR1cC5leGUKUXoyT0s1TVM1RkUvOWlVQ0NCTTZBSEFCSjNlWFo3ZmZzMFFKeFJlcDFYOFNVR1BnQUhlSHlQaWZrWDVUaUFJbEhHNkt2Y0FjZFZiWHliOCtkYjdZQUE9PQo=",
-                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.2.0/MRRDEV-Download_0.2.0_x64-setup.exe"
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTY1lhbTMrSjBqWk9JbW13Sm02WmVmZ2sxT2dGbkV5bnhLNWhuRFhMVnM3RHhTUFU5cUNoWTFmQWNBblZmLzFRRTl5aFNkN0NwME56dzRhdTArVkdQd0h6M3lMKy9yd0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NzkxOTc5CWZpbGU6TVJSREVWLURvd25sb2FkXzAuMy4wX3g2NC1zZXR1cC5leGUKL0hDYjlXUlM4a25tY05IN0F3L2dKdy95aXpGR05zZTk3TjdLcjE2YnplV1hxNkZXalgzZ1B5bmlUSnBySTdTTi8zVkZnR0xrbzhDalBIM3NKaFlHQnc9PQo=",
+                                             "url":  "https://github.com/marreiradigital/dev-down/releases/download/v0.3.0/MRRDEV-Download_0.3.0_x64-setup.exe"
                                          }
                   },
-    "pub_date":  "2026-11-12T14:20:48Z",
-    "version":  "0.2.0",
-    "notes":  "Downloads do navegador não se perdem mais: o app só assume o que consegue baixar, e o que exige a sua sessão fica com o navegador.\nVídeo: as qualidades já estão prontas quando o menu abre, e escolher uma começa a baixar. MP4 agora em H.264 + AAC, que abre em qualquer lugar.\nJanela nova: lista moderna, tema claro ou escuro seguindo o Windows, arrastar o arquivo baixado para outras pastas e programas, soltar um link para baixar.\nOpção de baixar direto, sem a janela de confirmação (Opções → Ao adicionar)."
+    "pub_date":  "2026-11-27T15:07:08Z",
+    "version":  "0.3.0",
+    "notes":  "Downloads mais rápidos e mais confiáveis:\n• Ao continuar um download, todas as conexões voltam a trabalhar, e a conexão que termina ajuda nas partes que faltam.\n• Arquivos grandes não travam mais no começo.\n• Ao continuar, o programa confere se o arquivo mudou no site; se mudou, recomeça em vez de entregar um arquivo corrompido.\n• Novo: \"Atualizar endereço\" no menu do download, para quando o link expira. O download continua de onde parou.\n• Em rede instável, quedas que já trouxeram dados não esgotam mais as tentativas.\n\nVídeo:\n• O motor de vídeo agora se atualiza sozinho e é conferido ao ser instalado.\n• Mensagens de erro de vídeo em português, dizendo o que fazer.\n\nMais:\n• Novos tipos capturados: DOCX, XLSX, PPTX, FLAC, WEBM, MSIX e outros.\n• A área de transferência não é mais lida o tempo todo (não atrapalha Excel nem Área de Trabalho Remota).\n• Extensão: a aba anônima usa os próprios cookies e não é capturada automaticamente. Recarregue a extensão depois de atualizar.\n• Atualizações de segurança."
 }

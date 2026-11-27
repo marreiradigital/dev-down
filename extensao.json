@@ -1,6 +1,6 @@
 {
-    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.2.0/mrrdev-download-extensao-0.2.0.zip",
+    "zip":  "https://github.com/marreiradigital/dev-down/releases/download/v0.3.0/mrrdev-download-extensao-0.3.0.zip",
     "url":  "https://dev-down.marreira.dev/",
-    "notas":  "Downloads do navegador não se perdem mais: o app só assume o que consegue baixar, e o que exige a sua sessão fica com o navegador.\nVídeo: as qualidades já estão prontas quando o menu abre, e escolher uma começa a baixar. MP4 agora em H.264 + AAC, que abre em qualquer lugar.\nJanela nova: lista moderna, tema claro ou escuro seguindo o Windows, arrastar o arquivo baixado para outras pastas e programas, soltar um link para baixar.\nOpção de baixar direto, sem a janela de confirmação (Opções → Ao adicionar).",
-    "versao":  "0.2.0"
+    "notas":  "Downloads mais rápidos e mais confiáveis:\n• Ao continuar um download, todas as conexões voltam a trabalhar, e a conexão que termina ajuda nas partes que faltam.\n• Arquivos grandes não travam mais no começo.\n• Ao continuar, o programa confere se o arquivo mudou no site; se mudou, recomeça em vez de entregar um arquivo corrompido.\n• Novo: \"Atualizar endereço\" no menu do download, para quando o link expira. O download continua de onde parou.\n• Em rede instável, quedas que já trouxeram dados não esgotam mais as tentativas.\n\nVídeo:\n• O motor de vídeo agora se atualiza sozinho e é conferido ao ser instalado.\n• Mensagens de erro de vídeo em português, dizendo o que fazer.\n\nMais:\n• Novos tipos capturados: DOCX, XLSX, PPTX, FLAC, WEBM, MSIX e outros.\n• A área de transferência não é mais lida o tempo todo (não atrapalha Excel nem Área de Trabalho Remota).\n• Extensão: a aba anônima usa os próprios cookies e não é capturada automaticamente. Recarregue a extensão depois de atualizar.\n• Atualizações de segurança.",
+    "versao":  "0.3.0"
 }

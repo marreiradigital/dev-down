@@ -22,7 +22,7 @@ Extensão do navegador (para o botão de vídeo e a captura)
 3) "Carregar sem compactação" e escolha a pasta "extension" que está aqui dentro
 4) Recarregue as abas abertas
 
-Na primeira vez, o programa baixa sozinho o yt-dlp e o FFmpeg (para baixar
-vídeo) — aparece uma barrinha de progresso no topo da janela.
+Na primeira vez, o programa baixa sozinho os complementos de vídeo (para
+baixar vídeo de sites) — aparece uma barrinha de progresso no topo da janela.
 
 Site: https://dev-down.marreira.dev
